@@ -21,6 +21,28 @@
     "date_posted_on_monday": "r604800"
   },
 
+  "extra_sources": {
+    "hiring_cafe": {
+      "enabled": true,
+      "apify_actor": "memo23/apify-hiring-cafe-scraper",
+      "posted_within_days": 3,
+      "max_items_per_search": 15,
+      "seniority": ["No Prior Experience Required", "Entry Level"],
+      "searches": [
+        { "keyword": "chemist",         "location": "Netherlands" },
+        { "keyword": "water treatment", "location": "Portugal" }
+      ]
+    },
+    "himalayas": {
+      "enabled": true,
+      "apify_actor": "inlifeprojects/himalayas-jobs-scraper",
+      "worldwide_only": true,
+      "seniority": ["Entry-level"],
+      "max_results_per_keyword": 15,
+      "keywords": ["AI automation", "operations associate"]
+    }
+  },
+
   "scoring": {
     "min_score_to_save": 5,
     "min_score_to_email": 7,

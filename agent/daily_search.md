@@ -35,7 +35,18 @@ If a file is missing, stop and say which one. Do not guess the candidate's profi
    ```
    Runs can go in parallel. If a run has not finished, poll it until it succeeds.
 
-3. **Collect light fields first.** From each dataset, fetch only `id, title, companyName, location, experienceLevel, url, applicationsCount`. Merge all results, drop duplicate ids, and drop ids in `seen_ids`.
+   **Extra sources.** For each source in `config.extra_sources` with `"enabled": true`, also run its actor:
+   - `hiring_cafe` (jobs from company career pages, many not on LinkedIn): one run per entry in `searches`, with input
+     `{"keyword", "location", "seniorityLevels": <seniority>, "dateFetchedPastNDays": <posted_within_days>, "maxItems": <max_items_per_search>, "enrichDescription": false}`.
+     Light fields: `id, job_information.title, v5_processed_job_data.company_name, v5_processed_job_data.formatted_workplace_location, v5_processed_job_data.min_industry_and_role_yoe, apply_url`.
+     Read descriptions later with `enrichDescription: true` on a single-job start URL (`https://hiring.cafe/job/<id>`) only if needed.
+   - `himalayas` (remote jobs): one run with input
+     `{"keywords": <keywords>, "seniority": <seniority>, "worldwide": <worldwide_only>, "maxResultsPerKeyword": <max_results_per_keyword>, "employmentType": "Full Time"}`.
+     Light fields: `id, title, company_name, location, experience_level, salary_min, salary_max, currency, source_url`. The `description` field is in the same dataset.
+
+   If a source fails or returns nothing, note it in the final summary and carry on with the others.
+
+3. **Collect light fields first and normalise.** From each dataset fetch only the light fields. Turn every posting into the same shape: `id, title, company, location, level, url`. Prefix ids from extra sources so they never clash (`hc:<id>`, `him:<id>`); LinkedIn ids stay as they are. Merge all results, drop duplicate ids and ids in `seen_ids`, and drop the **same role at the same company** found on two sources (keep the LinkedIn one).
 
 4. **Quick filter.** Use title, company and level to drop obvious mismatches against the rubric.
 
