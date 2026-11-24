@@ -43,10 +43,13 @@ If a file is missing, stop and say which one. Do not guess the candidate's profi
    - `himalayas` (remote jobs): one run with input
      `{"keywords": <keywords>, "seniority": <seniority>, "worldwide": <worldwide_only>, "maxResultsPerKeyword": <max_results_per_keyword>, "employmentType": "Full Time"}`.
      Light fields: `id, title, company_name, location, experience_level, salary_min, salary_max, currency, source_url`. The `description` field is in the same dataset.
+   - `welcome_to_the_jungle` (startups, strong in France and Spain): one run per entry in `searches`, with input
+     `{"query", "countryCode": <country_code, omit if empty>, "language": <job_language>, "experienceLevel": <experience_level>, "datePosted": <posted_within_days>, "searchOnlyInJobTitle": <search_only_in_title>, "maxItems": <max_items_per_search>, "includeDetails": false}`.
+     Light fields: `id, name, organizationName, offices.city, offices.country, remote, contractType, url`. Read a description by re-running with `includeDetails: true` only for promising postings. Skip internships unless the profile allows them.
 
    If a source fails or returns nothing, note it in the final summary and carry on with the others.
 
-3. **Collect light fields first and normalise.** From each dataset fetch only the light fields. Turn every posting into the same shape: `id, title, company, location, level, url`. Prefix ids from extra sources so they never clash (`hc:<id>`, `him:<id>`); LinkedIn ids stay as they are. Merge all results, drop duplicate ids and ids in `seen_ids`, and drop the **same role at the same company** found on two sources (keep the LinkedIn one).
+3. **Collect light fields first and normalise.** From each dataset fetch only the light fields. Turn every posting into the same shape: `id, title, company, location, level, url`. Prefix ids from extra sources so they never clash (`hc:<id>`, `him:<id>`, `wttj:<id>`); LinkedIn ids stay as they are. Merge all results, drop duplicate ids and ids in `seen_ids`, and drop the **same role at the same company** found on two sources (keep the LinkedIn one).
 
 4. **Quick filter.** Use title, company and level to drop obvious mismatches against the rubric.
 

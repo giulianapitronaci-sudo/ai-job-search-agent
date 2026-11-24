@@ -40,6 +40,19 @@
       "seniority": ["Entry-level"],
       "max_results_per_keyword": 15,
       "keywords": ["AI automation", "operations associate"]
+    },
+    "welcome_to_the_jungle": {
+      "enabled": true,
+      "apify_actor": "clearpath/welcome-to-the-jungle-jobs-api",
+      "job_language": "en",
+      "experience_level": "0-1",
+      "posted_within_days": "3",
+      "max_items_per_search": 15,
+      "search_only_in_title": true,
+      "searches": [
+        { "query": "operations", "country_code": "FR" },
+        { "query": "chemist",    "country_code": "" }
+      ]
     }
   },
 
