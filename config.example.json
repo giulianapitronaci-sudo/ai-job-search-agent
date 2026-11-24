@@ -1,0 +1,42 @@
+{
+  "_comment": "Copy this file to config.json and edit it. config.json is git-ignored, so your settings stay on your machine.",
+
+  "profile_file": "profile.md",
+  "tracker": {
+    "file": "~/Documents/job_search.xlsx",
+    "backup_dir": "~/Documents/job_search_backups",
+    "new_postings_sheet": "New postings",
+    "applications_sheet": "Applications",
+    "applications_first_row": 2,
+    "company_column": "A",
+    "role_column": "B"
+  },
+  "summary_email": "you@example.com",
+  "summary_language": "English",
+
+  "scraper": {
+    "apify_actor": "valig/linkedin-jobs-scraper",
+    "limit_per_search": 25,
+    "date_posted": "r86400",
+    "date_posted_on_monday": "r604800"
+  },
+
+  "scoring": {
+    "min_score_to_save": 5,
+    "min_score_to_email": 7,
+    "max_descriptions_to_read": 20
+  },
+
+  "title_exclude": [
+    "senior", "sr", "principal", "director", "head of",
+    "technician", "operator", "postdoc", "phd",
+    "working student", "werkstudent", "intern"
+  ],
+
+  "searches": [
+    { "keywords": "graduate chemist",         "location": "Netherlands" },
+    { "keywords": "environmental consultant", "location": "Portugal" },
+    { "keywords": "water treatment engineer", "location": "Spain" },
+    { "keywords": "AI automation specialist", "location": "European Union" }
+  ]
+}

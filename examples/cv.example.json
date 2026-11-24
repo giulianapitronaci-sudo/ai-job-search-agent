@@ -1,0 +1,48 @@
+{
+  "name": "Alex Moreno",
+  "summary": "Environmental chemist (MSc, 2026) with hands-on drinking-water analysis from a 6-month internship at a water utility. I like turning lab data into clear reports, and I automate repetitive work with Python and simple AI workflows.",
+  "contact": ["alex.moreno@example.com", "+351 000 000 000", "Lisbon, Portugal", "EU citizen"],
+  "photo": null,
+
+  "sections": [
+    {
+      "title": "Experience",
+      "entries": [
+        {
+          "role": "Water Quality Intern",
+          "org": "Example Water Utility",
+          "date": "Feb 2026 – Jul 2026",
+          "sub": "Drinking-water laboratory · Lisbon, Portugal",
+          "bullets": [
+            "Analysed 300+ drinking-water samples for nitrates, chlorine and metals (UV/VIS, titrations) following accredited methods.",
+            "Built a Python script that checks every result against legal limits and flags outliers, cutting weekly report time from 3 hours to 20 minutes."
+          ]
+        },
+        {
+          "role": "Data & Automation Assistant (part-time)",
+          "org": "Example Logistics Co.",
+          "date": "2024 – 2025",
+          "sub": "Lisbon, Portugal",
+          "bullets": [
+            "Automated order tracking between email and Google Sheets with n8n, removing about 5 hours of manual data entry per week."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "entries": [
+        { "role": "MSc Environmental Chemistry", "org": "Example University", "date": "2024 – 2026", "sub": "Thesis: heavy-metal adsorption on biochar" },
+        { "role": "BSc Chemistry", "org": "Example University", "date": "2021 – 2024" }
+      ]
+    },
+    {
+      "title": "Skills",
+      "skills": {
+        "Languages": "Portuguese (native) · English (C1) · Spanish (B2)",
+        "Lab": "HPLC · UV/VIS · Titrations · Sample preparation · Accredited methods",
+        "Tools": "Python · Excel · n8n · Basic GIS · ChatGPT · Claude"
+      }
+    }
+  ]
+}

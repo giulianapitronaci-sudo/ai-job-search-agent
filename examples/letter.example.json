@@ -1,0 +1,15 @@
+{
+  "name": "Alex Moreno",
+  "contact": "alex.moreno@example.com   ·   +351 000 000 000   ·   Lisbon, Portugal   ·   EU citizen",
+  "date": "24 November 2026",
+  "to": "Example Environmental Consultancy · Graduate Team",
+  "re": "Re: Graduate Environmental Scientist – Porto",
+  "body": [
+    "Dear Hiring Team,",
+    "I am applying for the Graduate Environmental Scientist role. I finished my MSc in Environmental Chemistry this year, and during my internship at a water utility I analysed more than 300 drinking-water samples and wrote the weekly quality reports.",
+    "The part I enjoyed most was making the data useful. I wrote a small Python script that checks every result against legal limits and flags anything unusual, which cut our weekly report time from three hours to twenty minutes.",
+    "I would be glad to bring the same care for data and clear reporting to your team. My CV is attached."
+  ],
+  "closing": "Kind regards,",
+  "signature": null
+}

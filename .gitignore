@@ -1,0 +1,23 @@
+# Your personal data never goes to GitHub
+config.json
+profile.md
+*.xlsx
+*.xlsm
+~$*
+output/
+backups/
+*.pdf
+*.docx
+*.jpg
+*.jpeg
+*.png
+!docs/*.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# macOS
+.DS_Store
